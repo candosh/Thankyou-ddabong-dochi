@@ -43,7 +43,8 @@ PaaS(Platform as a Service) 범주에 속하는 클라우드 서비스
 # 실습 : 따봉도치야 고마워!
 
  <img src="https://github.com/candosh/Thankyou-ddabong-dochi/assets/104755384/2e45b433-1b22-4f92-8583-b6badb49ba24" width="300px" alt="ddabong"/>
-
+ 
+ ### PaaS 플랫폼을 이용한 1분컷 웹사이트 배포해보기
 <b>vercel과 깃헙 레포만으로 빠르게 정적 사이트 배포해보기!</b> 백엔드 개발자도 웹페이지 배포를 쉽고 간편하게 해보자! <br/>(aws 안녕 ~~^~^)
 
 - https://vercel.com/
