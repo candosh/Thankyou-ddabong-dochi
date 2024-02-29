@@ -73,7 +73,3 @@ const ContentInput = styled.input`
   font-weight: 400;
   padding-left: 20px;
 `;
-
-const SubmitButton = styled.button`
-  // 버튼 스타일
-`;
