@@ -34,7 +34,6 @@ function Home() {
             />
           </form>
         </ContentContainer>
-        <SubmitButton type="submit">✅</SubmitButton>
       </MainContainer>
     </>
   );
