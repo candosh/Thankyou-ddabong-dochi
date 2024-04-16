@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
-import Ddabong from "../src/assets/ddabong.jpeg";
+import Ddabong from "../assets/ddabong.jpeg";
 
 function Home() {
   const navigate = useNavigate();
@@ -22,18 +22,23 @@ function Home() {
   return (
     <>
       <MainContainer>
-        <MainImage src={Ddabong} alt="mainImg" />
-        <ContentContainer>
-          <form onSubmit={handleSubmit}>
-            <ContentInput
-              as="input"
-              type="text"
-              value={inputValue}
-              onChange={handleInputChange}
-              placeholder="따봉도치야 고마워"
-            />
-          </form>
-        </ContentContainer>
+        <ComponentContaienr>
+          <HeaderContainer>
+            <p>엇! 전설의 따봉도치를 발견했다...!</p>
+          </HeaderContainer>
+          <MainImage src={Ddabong} alt="mainImg" />
+          <ContentContainer>
+            <form onSubmit={handleSubmit}>
+              <ContentInput
+                as="input"
+                type="text"
+                value={inputValue}
+                onChange={handleInputChange}
+                placeholder="따봉도치야 고마워"
+              />
+            </form>
+          </ContentContainer>
+        </ComponentContaienr>
       </MainContainer>
     </>
   );
@@ -47,6 +52,19 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
+`;
+
+const ComponentContaienr = styled.div`
+  margin: 30px 30px;
+`;
+
+const HeaderContainer = styled.h2`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  font-family: DNFBitBitv2;
+  font-size: 20px;
 `;
 
 const MainImage = styled.img`
