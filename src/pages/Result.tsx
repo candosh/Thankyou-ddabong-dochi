@@ -13,11 +13,11 @@ function Result() {
           <ContentContainer>
             <ContentText>
               <p>
-                당신은 뭐든지 잘 해낼 거고, 잘 될거예요!
+                당신은 뭐든지 잘 해낼 거고 잘 될거예요!
                 <br />
-                <br />이 행운 따봉도치의 말을 믿고 <br />
+                <br />이 행운의 따봉도치 말을 믿고 <br />
                 <br />
-                오늘도 좋은 하루 보내요! ...🦔🍀
+                오늘도 좋은 하루 보내세요! ...🦔🍀
               </p>
             </ContentText>
           </ContentContainer>
@@ -81,6 +81,6 @@ const ContentText = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: SUIT Variable;
-  font-size: 17px;
+  font-size: 14px;
+  font-family: DNFBitBitv2;
 `;

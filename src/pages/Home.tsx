@@ -128,8 +128,8 @@ const ContentContainer = styled.div`
 `;
 
 const ContentText = styled.div`
-  font-family: SUIT Variable;
-  font-size: 15px;
+  font-family: DNFBitBitv2;
+  font-size: 13px;
   color: #151515;
 `;
 const ContentInput = styled.input`
@@ -155,7 +155,7 @@ const ContentInput = styled.input`
 
 const VisitorCount = styled.div`
   font-size: 14px;
-  font-family: SUIT Variable;
+  font-family: DNFBitBitv2;
   color: #666666;
   display: flex;
   justify-content: center;
