@@ -18,10 +18,13 @@ function Home() {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    if (inputValue === "따봉도치야 고마워" || "따봉도치야 고마워!") {
+    if (
+      inputValue === "따봉도치야 고마워" ||
+      inputValue === "따봉도치야 고마워!"
+    ) {
       navigate("/result");
     } else {
-      alert("정확한 따봉도치를 입력해주세요 🦹🏻‍♀️");
+      alert("정확한 문구를 입력해주세요...! 🦔");
     }
   };
 

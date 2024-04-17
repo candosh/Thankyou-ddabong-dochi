@@ -17,7 +17,7 @@ function Result() {
                 <br />
                 <br />이 행운 따봉도치의 말을 믿고 <br />
                 <br />
-                오늘도 좋은 하루 보내요! 🦔
+                오늘도 좋은 하루 보내요! ...🦔🍀
               </p>
             </ContentText>
           </ContentContainer>
@@ -78,6 +78,9 @@ const ContentContainer = styled.div`
 `;
 
 const ContentText = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-family: SUIT Variable;
   font-size: 17px;
 `;
