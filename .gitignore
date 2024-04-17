@@ -50,3 +50,13 @@ logs/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Firebase 설정 파일
+/firebaseConfig.js
+
+# Firebase 로컬 파일
+/.firebase/
+/.firebaserc
+/firebase.json
+/.firestore.rules
+/.firestore.indexes.json

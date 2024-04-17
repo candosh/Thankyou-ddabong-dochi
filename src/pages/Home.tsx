@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Ddabong from "../assets/ddabong.jpeg";
+import {
+  incrementVisitorCount,
+  onVisitorCountUpdate,
+} from "../db/visitorCounter";
 
 function Home() {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
+  const [visitorCount, setVisitorCount] = useState<number>(0);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
@@ -19,6 +24,15 @@ function Home() {
       alert("정확한 따봉도치를 입력해주세요 🦹🏻‍♀️");
     }
   };
+
+  // 방문자 수 Count
+  useEffect(() => {
+    incrementVisitorCount();
+    const unsubscribe = onVisitorCountUpdate(setVisitorCount);
+
+    return unsubscribe;
+  }, []);
+
   return (
     <>
       <MainContainer>
@@ -41,6 +55,9 @@ function Home() {
               />
             </form>
           </ContentContainer>
+          <VisitorCount>
+            <p>🦔 따봉도치 방문자 수 🦔 : {visitorCount}</p>
+          </VisitorCount>
         </ComponentContaienr>
       </MainContainer>
     </>
@@ -108,8 +125,9 @@ const ContentContainer = styled.div`
 `;
 
 const ContentText = styled.div`
+  font-family: SUIT Variable;
   font-size: 15px;
-  color: #666666;
+  color: #151515;
 `;
 const ContentInput = styled.input`
   height: 32px;
@@ -121,11 +139,27 @@ const ContentInput = styled.input`
   border: 1px solid;
   outline: none;
   color: #626161;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
   padding-left: 20px;
   margin-top: 10px;
+  font-family: SUIT Variable;
+  font-size: 15px;
   @media (max-width: 768px) {
     width: 300px;
+  }
+`;
+
+const VisitorCount = styled.div`
+  font-size: 14px;
+  font-family: SUIT Variable;
+  color: #666666;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+  @media (max-width: 768px) {
+    font-size: 12px;
+    margin: 0px;
   }
 `;
