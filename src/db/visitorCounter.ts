@@ -2,10 +2,8 @@
 import { db } from "../../firebaseConfig.ts";
 import { doc, updateDoc, getDoc, onSnapshot } from "firebase/firestore";
 
-// Visitor count document reference
 const visitorDocRef = doc(db, "VisitorCount", "visitor");
 
-// Increment the visitor count
 export const incrementVisitorCount = async (): Promise<void> => {
   try {
     const docSnap = await getDoc(visitorDocRef);
@@ -13,7 +11,6 @@ export const incrementVisitorCount = async (): Promise<void> => {
       const newCount = (docSnap.data().count || 0) + 1;
       await updateDoc(visitorDocRef, { count: newCount });
     } else {
-      // If the document does not exist, it's a first visit, create the document with count 1
       await updateDoc(visitorDocRef, { count: 1 });
     }
   } catch (error) {
@@ -21,7 +18,6 @@ export const incrementVisitorCount = async (): Promise<void> => {
   }
 };
 
-// Subscribe to the visitor count document
 export const onVisitorCountUpdate = (
   callback: (count: number) => void
 ): (() => void) => {
@@ -38,6 +34,5 @@ export const onVisitorCountUpdate = (
     }
   );
 
-  // Return the unsubscribe function to be called when the subscription is no longer needed
   return unsubscribe;
 };
